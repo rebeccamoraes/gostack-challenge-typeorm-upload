@@ -17,7 +17,10 @@ class Transaction {
   @Column()
   title: string;
 
-  @Column()
+  @Column({
+    type: 'enum',
+    enum: ['income', 'outcome'],
+  })
   type: 'income' | 'outcome';
 
   @Column()
