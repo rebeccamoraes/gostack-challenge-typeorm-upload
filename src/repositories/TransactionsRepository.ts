@@ -16,7 +16,7 @@ class TransactionsRepository extends Repository<Transaction> {
     const findTransactions = await this.find();
 
     findTransactions.forEach(transaction => {
-      balance[transaction.type] += transaction.value;
+      balance[transaction.type] += Number(transaction.value);
     });
 
     balance.total = balance.income - balance.outcome;
